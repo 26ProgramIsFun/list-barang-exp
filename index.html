@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Barang</title>
+    <link rel="stylesheet" href="styles.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>List Barang</h2>
+        <input type="text" id="searchItem" class="search" onkeyup="searchItem()"
+            placeholder="Cari berdasarkan nama item atau tanggal kadaluwarsa...">
+        <button onclick="toggleForm()" class="addBtn">Tambah Data</button>
+        <form id="addForm" class="addForm">
+            <input type="text" id="itemName" placeholder="Nama Barang...">
+            <input type="date" id="expDate" placeholder="Tanggal Exp...">
+            <button type="button" onclick="addItem()" class="addBtn">Tambah</button>
+        </form>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Item Name <span class="sort-indicator" id="sortIndicatorName"></span>
+                    </th>
+                    <th onclick="sortTable(1)">Exp Date <span class="sort-indicator" id="sortIndicatorDate"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="">
+                    <td>Aries</td>
+                    <td>31 Agustus 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Biore Guard</td>
+                    <td>4 Agustus 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Chocolatos Matcha</td>
+                    <td>10 Juli 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Garuda Rosta</td>
+                    <td>24 September 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr>
+                    <td>Hilo Choco Hazelnut</td>
+                    <td>19 September 2025</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr>
+                    <td>Hilo Choco Milk</td>
+                    <td>29 September 2025</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Hydro Coco</td>
+                    <td>23 Juli 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>JETZ</td>
+                    <td>12 Juli 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Kopi Kapal Api</td>
+                    <td>22 Januari 2025</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Mie Goreng - Hype Ayam Geprek</td>
+                    <td>9 April 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Mie Kuah Seblak </td>
+                    <td>30 April 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Mie Rendang</td>
+                    <td>12 Mei 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr class="nearing-expiration" style="">
+                    <td>Mie Sedaap - Selection</td>
+                    <td>14 Maret 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr class="nearing-expiration" style="">
+                    <td>Mie Takoyaki</td>
+                    <td>14 Maret 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Morris - Twin Stick</td>
+                    <td>17 Februari 2025</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Piattos</td>
+                    <td>29 Agustus 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Piattoz - Rumput Laut</td>
+                    <td>7 Desember 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Pocari Sweat</td>
+                    <td>23 Juli 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Pocari Sweet</td>
+                    <td>14 Mei 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Prochiz - Keju</td>
+                    <td>2 September 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Salonpas Gel</td>
+                    <td>1 Agustus 2025</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+                <tr style="">
+                    <td>Spix - mie goreng</td>
+                    <td>6 Agustus 2024</td>
+                    <td><button class="deleteBtn" onclick="deleteItem(this)">Hapus</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.min.js"></script>
+</body>
+
+</html>
